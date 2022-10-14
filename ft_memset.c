@@ -6,7 +6,7 @@
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 21:41:49 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/07 16:58:16 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2022/10/13 13:20:09 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,10 @@ void *ft_memset (void *s, int c, size_t n)
 
 	i = 0;
 	str = (char *)s;
-	while (str[i] && i < n)
+	while (i < n)
 	{
 		str[i] = c;
 		i++;
 	}
-	return s;
+	return (s);
 }
-
-// #include <stdio.h>
-// int main(void)
-// {
-// 	char str[] = "ilyass";
-// 	ft_memset(str, '*', 2);
-// 	printf("%s", str);
-// }

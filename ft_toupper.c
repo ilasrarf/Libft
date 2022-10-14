@@ -6,7 +6,7 @@
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 08:58:12 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/09 16:34:09 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2022/10/12 00:11:36 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,3 @@ int ft_toupper(int c)
 		return (c - 32);
 	return (c);
 }
-
-// int main(int argc, char const *argv[])
-// {
-// 	char b = ft_toupper('A');
-// 	printf("%c", b);
-// 	return 0;
-// }

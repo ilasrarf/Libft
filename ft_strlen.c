@@ -6,7 +6,7 @@
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 21:08:55 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/05 21:34:42 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2022/10/13 13:20:24 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,3 @@ size_t ft_strlen(const char *s)
         i++;
     return (i);
 }
-// #include <stdio.h>
-// int main()
-// {
-//     const char *str = "11564846431";
-//     printf("%zu", ft_strlen(str));
-// }

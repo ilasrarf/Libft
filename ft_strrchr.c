@@ -6,7 +6,7 @@
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 11:47:13 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/09 16:33:13 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2022/10/13 13:20:34 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,3 @@ char    *ft_strrchr(const char *s, int c)
 		return ((char *)(s + i));
 	return (NULL);
 }
-
-// int main()
-// {
-// 	char    *s = "ilyasssasas";
-// 	printf("------>%s\n", ft_strrchr(s, '9'));
-// 	printf("------>%s", strrchr(s, '9'));
-// }

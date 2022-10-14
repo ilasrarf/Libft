@@ -6,19 +6,13 @@
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 21:20:41 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/05 21:40:41 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2022/10/13 13:19:47 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int ft_isprint(int c)
 {
-    if (c >= 32 && c <= 127)
+    if (c >= 32 && c <= 126)
         return (1);
     return (0);
 }
-
-// #include <stdio.h>
-// int main()
-// {
-//     printf("%d", ft_isprint(32));   
-// }

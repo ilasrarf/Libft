@@ -6,7 +6,7 @@
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 09:45:57 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/09 16:33:44 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2022/10/13 13:20:16 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,6 @@ size_t ft_strlcat( char *dst, const char *src, size_t size)
 		j++;
 		i++;
 	}
+	dst[j] = '\0';
 	return (len_f_d + len_f_s);
 }
-
-// int main(int argc, char const *argv[])
-// {
-// 	char dest[] = "123456789";
-// 	char dest1[] = "123456789";
-// 	char src[] = "aaaaaaaaaaaa";
-	
-// 	printf("%zu === %s\n", ft_strlcat(dest, src, 0), dest);
-// 	printf("%lu === %s", strlcat(dest1, src, 0), dest1);
-// 	return 0;
-// }

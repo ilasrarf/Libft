@@ -6,7 +6,7 @@
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 16:57:38 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/09 16:33:36 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2022/10/13 20:41:12 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,34 @@
 void *ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t i;
-	size_t j;
     char *s;
     char *d;
-	char asest[n];
 	
 	i = 0;
-	j = 0;
 	s = (char *) src;
 	d = (char *) dest;
-	
-	while (i < n)
+	if (src < dest)
 	{
-		asest[i] = s[i];
-		i++;
+		while (n > 0)
+		{
+			n--;
+			d[n] = s[n];
+		}
+		return (dest);
 	}
-	while(j < n)
-	{
-		d[j] = asest[j];
-		j++;
-	}
-	return (dest);
+	return (ft_memcpy(dest, src, n));
 }
 
-// #include <stdio.h>
-// #include <string.h>
-// int main()
+
+// int main(int argc, char const *argv[])
 // {
-// 	char src[] = "123456789";
-// 	char src1[] = "123456789";
-// 	printf("%s\n",ft_memmove(src1 + 2,src1,6));
-// 	printf("%s",memmove(src + 2,src,6));
+// 	char *dest = malloc(20);
+// 	for(int i = 1; i <= 20; i++)
+// 		dest[i] = i;
+// 	char *src = dest + 5;
+// 	memmove(dest, src, 5);
+// 	for(int i = 1; i <= 20; i++)
+// 		printf("%i\n",dest[i]); 
+// 	//printf("%s", ft_memmove(dest, src, 5)); 
 // 	return 0;
 // }
