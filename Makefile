@@ -26,21 +26,19 @@ FILES = ft_memset \
 		ft_isprint \
 		ft_toupper \
 		ft_tolower \
-		# ft_calloc \
-		# ft_strdup \
-		# ft_substr \
-		# ft_strjoin \
-		# ft_strtrim \
+		ft_strdup \
+		ft_calloc \
+		ft_substr \
+		ft_strjoin \
+		ft_strtrim \
+		ft_strmapi \
+		ft_putchar_fd \
+		ft_putstr_fd \
+		ft_putendl_fd \
+		ft_striteri\
+		# ft_putnbr_fd \
 		# ft_split \
 		# ft_itoa \
-		# ft_strmapi \
-		# ft_putchar_fd \
-		# ft_putstr_fd \
-		# ft_putendl_fd \
-		# ft_putnbr_fd \
-		# ft_strtok \
-		# ft_strcmp \
-		# get_next_line \
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \

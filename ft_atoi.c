@@ -6,7 +6,7 @@
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 12:35:22 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/08 13:38:07 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2022/10/16 19:07:01 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 int        ft_atoi(char *str)
 {
 	int	i;
-	int res;
+	int	res;
 	int signe;
+	int c;
 	
 	signe = 1;
 	res = 0;
@@ -29,18 +30,22 @@ int        ft_atoi(char *str)
             signe = -1;
 		i++;
 	}
+	c = 0;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		res = res * 10;
 		res = res + str[i] - '0'; 
 		i++;
+		c++;
+		// if (c >= 16)
+		// 	return (0);
 	}
 	return (res * signe);
 }
 
 // int main(int argc, char **argv)
 // {
-// 	char *str = "   - 123";
+// 	char *str = "   -21474836478";
 // 	printf("%d\n=========\n", ft_atoi(str));
 // 	printf("%d", atoi(str));
 // 	return 0;	

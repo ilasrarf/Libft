@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 21:08:55 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/16 00:29:35 by ilasrarf         ###   ########.fr       */
+/*   Created: 2022/10/19 19:13:18 by ilasrarf          #+#    #+#             */
+/*   Updated: 2022/10/19 19:23:52 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s)
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-    size_t i;
-
-    i = 0;
-    while(s[i])
+	int i;
+    
+    if(!s)
+        return ;
+	i = 0;
+    while (s[i]!= '\0')
+	{
+        f(i ,&s[i]);
         i++;
-    return (i);
+    }
 }
-//"alae"

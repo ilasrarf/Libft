@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 21:08:55 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/16 00:29:35 by ilasrarf         ###   ########.fr       */
+/*   Created: 2022/10/15 20:33:03 by ilasrarf          #+#    #+#             */
+/*   Updated: 2022/10/15 22:56:11 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s)
+void	*ft_calloc(size_t count, size_t size)
 {
-    size_t i;
-
-    i = 0;
-    while(s[i])
-        i++;
-    return (i);
+	void    *mem;
+	mem = malloc(size * count);
+	if(!mem)
+        return (0);
+	ft_memset(mem, '\0', count * size);
+    return (mem);	
 }
-//"alae"

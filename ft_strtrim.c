@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 21:08:55 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/16 00:29:35 by ilasrarf         ###   ########.fr       */
+/*   Created: 2022/10/18 16:16:53 by ilasrarf          #+#    #+#             */
+/*   Updated: 2022/10/18 18:18:53 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s)
+char *ft_strtrim(char const *s1, char const *set)
 {
-    size_t i;
-
-    i = 0;
-    while(s[i])
-        i++;
-    return (i);
+	size_t len_s1;
+	
+	if (!s1)
+		return (0);
+	while (s1[0] && ft_strchr(set ,s1[0]))
+		s1++;
+	len_s1 = ft_strlen(s1);
+	while (len_s1 > 0 && ft_strrchr(set ,s1[len_s1 - 1]))
+		len_s1--;
+	return (ft_substr(s1, 0, len_s1));
 }
-//"alae"
+
+// int main(void)
+// {
+// 	char *s1 = "aax allb12xpa xaa";
+// 	char *s2 = "aax";
+// 	printf("%s", ft_strtrim(s1, s2));
+// 	return 0;
+// }
+

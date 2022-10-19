@@ -1,43 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 08:26:47 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/16 19:12:04 by ilasrarf         ###   ########.fr       */
+/*   Created: 2022/10/16 19:18:49 by ilasrarf          #+#    #+#             */
+/*   Updated: 2022/10/17 22:40:09 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	size_t	x;
+	size_t			i;
+	unsigned int	start_cnt; 
+	char			*alloc;
 	
-	x = ft_strlen(src);
+	if (!s)
+		return (0);
 	i = 0;
-	if (size != 0)
+	start_cnt = start;
+	if (start >= ft_strlen(s))
+		return (ft_strdup("\0"));
+	alloc = (char *)malloc(len + 1);
+	if (!alloc)
+        return (0);
+	while (i < len)
 	{
-		while (src[i] != '\0' && i < size - 1)
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
-	}
-	return (x);
+		alloc[i] = s[start_cnt + i];
+		i++;
+ 	}
+	alloc[i] = '\0';
+	return (alloc);
 }
 
 // int main(int argc, char const *argv[])
 // {
-// 	char src[] = "12345";
-// 	char src1[] = "12345";
-//  	char dst[] = "qwert";
-//  	char dst1[] = "qwert";
-// 	printf("%zu ---- %s\n" ,ft_strlcpy(dst1, src, 0), dst);
-// 	printf("%zu ---- %s" ,   strlcpy(dst, src, 0), dst1);
+// 	char *str = "ilyass asrarfi";
+// 	printf("%s", ft_substr(str, 15, 2));
 // 	return 0;
 // }
 

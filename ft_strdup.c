@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 21:08:55 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/16 00:29:35 by ilasrarf         ###   ########.fr       */
+/*   Created: 2022/10/15 19:47:06 by ilasrarf          #+#    #+#             */
+/*   Updated: 2022/10/15 19:53:41 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s)
+char    *ft_strdup(const char *str)
 {
-    size_t i;
+	char *alloc;
+	size_t i;
+	size_t str_len;
 
-    i = 0;
-    while(s[i])
-        i++;
-    return (i);
+	str_len = ft_strlen(str);
+	i = 0;
+	alloc = (char *)malloc((str_len + 1) * sizeof(char));
+	if (!alloc)
+		return (0);
+	return (ft_memcpy(alloc, str, str_len + 1));
 }
-//"alae"

@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 21:08:55 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/16 00:29:35 by ilasrarf         ###   ########.fr       */
+/*   Created: 2022/10/19 14:39:37 by ilasrarf          #+#    #+#             */
+/*   Updated: 2022/10/19 14:57:48 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s)
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    size_t i;
-
-    i = 0;
-    while(s[i])
-        i++;
-    return (i);
+	int	i;
+	char *str;
+	size_t len;
+	
+	if (!s)
+		return (0);
+	i = 0;
+	len = ft_strlen(s);	
+	str = (char *)malloc((sizeof(char) * len) + 1);
+	if (!str)
+		return (0);
+	while (s[i])
+	{
+		str[i] = f(i, s[i]);
+		i++;	
+	}
+	str[i] = '\0';
+    return (str);
 }
-//"alae"

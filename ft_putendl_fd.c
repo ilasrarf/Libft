@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 21:08:55 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/16 00:29:35 by ilasrarf         ###   ########.fr       */
+/*   Created: 2022/10/19 15:28:41 by ilasrarf          #+#    #+#             */
+/*   Updated: 2022/10/19 15:29:11 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s)
+void ft_putendl_fd(char *s, int fd)
 {
-    size_t i;
-
-    i = 0;
-    while(s[i])
-        i++;
-    return (i);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
-//"alae"

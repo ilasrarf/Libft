@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 21:08:55 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/16 00:29:35 by ilasrarf         ###   ########.fr       */
+/*   Created: 2022/10/19 15:02:42 by ilasrarf          #+#    #+#             */
+/*   Updated: 2022/10/19 15:07:28 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s)
+void    ft_putstr_fd(char const *s, int fd)
 {
-    size_t i;
+	int i;
 
+	if (!s)
+		return ;
     i = 0;
-    while(s[i])
+	while (s[i]!= '\0')
+    {
+		ft_putchar_fd(s[i], fd);
         i++;
-    return (i);
+	}
 }
-//"alae"
