@@ -36,9 +36,9 @@ FILES = ft_memset \
 		ft_putstr_fd \
 		ft_putendl_fd \
 		ft_striteri\
-		# ft_putnbr_fd \
-		# ft_split \
-		# ft_itoa \
+		ft_putnbr_fd \
+		ft_split \
+		ft_itoa \
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \
@@ -47,8 +47,8 @@ FILES_B = 	ft_lstnew \
 	  		ft_lstadd_back \
 	  		ft_lstdelone \
 	  		ft_lstclear \
-	  		ft_lstiter \
-	  		ft_lstmap
+	  		# ft_lstiter \
+	  		# ft_lstmap \
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))

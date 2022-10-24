@@ -6,7 +6,7 @@
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 23:37:21 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/17 23:40:24 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2022/10/23 17:54:55 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char    *ft_itoa(int n)
 {
-	if(n == 0)
-		return (0);
-	return (0);
+	if(n)
+		return "alae";
+	return NULL;
 }

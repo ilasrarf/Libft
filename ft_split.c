@@ -6,7 +6,7 @@
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 18:19:23 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/19 12:42:19 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2022/10/23 18:15:22 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,12 @@ static char *ft_skip_sp(const char *s, char c)
 	return (ft_substr(s, 0, len));	
 }
 
-static int ft_cnt_words(char *s, char c)
+static int ft_cnt_words(char *str, char c)
 {
 	int i;
-	char *str;
 	int cnt;
 
 	cnt = 0;
-	str = ft_skip_sp(s, c);
 	i = 0;
 	while (str[i])
 	{
@@ -45,13 +43,11 @@ static int ft_cnt_words(char *s, char c)
 	return (cnt + 1);
 }
 
-static int ft_char_cnt(char *s, char c)
+static int ft_char_cnt(char *str, char c)
 {
 	int i;
-	char *str;
 	
 	i = 0;
-	str = ft_skip_sp(s, c);
 	while (str[i] && str[i] != c)
         i++;
     return (i);
@@ -60,39 +56,52 @@ static int ft_char_cnt(char *s, char c)
 char **ft_split(char const *s, char c)
 {
 	char *str;
-	char **res;
-    int j;
-	int char_cnt;
-
-	char_cnt = 0;
-	j = 0;
-	str = ft_skip_sp(s, c);
-	res = (char **)malloc((sizeof(char *) * ft_cnt_words(str, c)) +1);
-	while (*str != '\0')
-	{
-		while (*str == c)
-			str++;
-		if (*str != '\0')
-		{
-			ft_strlcpy(res[j],str, ft_char_cnt(str, c));
-			j++;
-		}
-		str = str + ft_char_cnt(str, c);
-	}
-	return (res);
+    char **res;
+    int cn_word;
+    int i;
+    int to_cpy;
+    int cn_char;
+	if(!s)
+		return (NULL);
+    to_cpy = 0;
+    i = 0;
+    str = ft_skip_sp(s, c);
+    cn_word = ft_cnt_words(str, c);
+    cn_char = ft_char_cnt(str, c);
+    res = (char **)ft_calloc(cn_word + 1, sizeof(char *));
+    if (!res)
+        return (0);
+    while (i < cn_word)
+    {
+        while (*str == c)
+            str++;
+        if (cn_char)
+        {
+            res[i] = (char *)malloc((sizeof(char) * cn_char) + 1);
+            to_cpy = 0;
+            while (*str != c && *str != '\0')
+            {
+                res[i][to_cpy] = str[0];
+                str++;
+                to_cpy++;
+            }
+            res[i][to_cpy] = '\0';
+        }    
+        i++;    
+    }
+    return (res);
 }
 
-int main()
-{
-	int i = 0;
-  	char s[] = "   dfgh fgh dfgh  dfgh ghd  fgh  ";
-  	char sp = ' ';
-	char **res = ft_split(s, sp);
- 	// printf("{%d}", ft_char_cnt(s, sp));
- 	while (res[i])
- 	{
-		printf("%s", res[i]);
-		printf("\n");
-		i++;
-	}
-}
+// int main()
+// {
+// 	int i = 0;
+//   	char s[] = "            dfghg        hdfgh              ";
+//   	char sp = ' ';
+// 	char **res = ft_split(s, sp);
+//  	while (i < 3)
+//  	{
+// 		printf("%s", res[i]);
+// 		printf("\n");
+// 		i++;
+// 	}
+// }

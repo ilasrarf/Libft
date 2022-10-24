@@ -1,45 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 19:18:49 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/21 21:45:08 by ilasrarf         ###   ########.fr       */
+/*   Created: 2022/10/20 18:51:41 by ilasrarf          #+#    #+#             */
+/*   Updated: 2022/10/20 22:10:44 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void    ft_putnbr_fd(int n, int fd)
 {
-	size_t			i;
-	unsigned int	start_cnt; 
-	char			*alloc;
-	
-	if (!s)
-		return (0);
-	i = 0;
-	start_cnt = start;
-	if (start >= ft_strlen(s))
-		return (ft_strdup("\0"));
-	alloc = (char *)malloc(len + 1);
-	if (!alloc)
-        return (0);
-	while (i < len)
+	if(n == -2147483648)
 	{
-		alloc[i] = s[start_cnt + i];
-		i++;
- 	}
-	alloc[i] = '\0';
-	return (alloc);
+		ft_putchar_fd('-', fd);
+		ft_putchar_fd('2', fd);
+		n = 147483648;
+	}
+	if(n < 0)
+	{
+		ft_putchar_fd('-', fd);
+        n = n * -1;
+	}
+	if(n >= 0 && n <= 9)
+        ft_putchar_fd((n + '0'), fd);
+	if(n > 9)
+	{
+		ft_putnbr_fd((n / 10), fd);
+		ft_putnbr_fd((n % 10), fd);
+	}
 }
 
 // int main(int argc, char const *argv[])
 // {
-// 	char *str = "ilyass asrarfi";
-// 	printf("%s", ft_substr(str, 15, 2));
+// 	int n = -2147483648;
+// 	ft_putnbr_fd(n, 1);
 // 	return 0;
 // }
-
