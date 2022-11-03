@@ -6,16 +6,16 @@
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 18:04:56 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/23 21:29:15 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2022/10/29 08:53:32 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!new) 
+	if (!new || !lst)
 		return ;
-	new->next  = *lst;
+	new->next = *lst;
 	*lst = new;
 }

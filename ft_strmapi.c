@@ -6,18 +6,18 @@
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 14:39:37 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/23 16:38:21 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2022/10/30 00:40:24 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
-	char *str;
-	size_t len;
-	
+	int		i;
+	char	*str;
+	size_t	len;
+
 	if (!s)
 		return (0);
 	i = 0;
@@ -28,8 +28,8 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	while (s[i])
 	{
 		str[i] = f(i, s[i]);
-		i++;	
+		i++;
 	}
 	str[i] = '\0';
-    return (str);
+	return (str);
 }

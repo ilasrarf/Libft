@@ -6,13 +6,13 @@
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 15:28:41 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/19 15:29:11 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2022/10/29 14:45:02 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);

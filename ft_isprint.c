@@ -6,13 +6,13 @@
 /*   By: ilasrarf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 21:20:41 by ilasrarf          #+#    #+#             */
-/*   Updated: 2022/10/13 13:19:47 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2022/10/29 08:51:36 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+#include "libft.h"
+
+int	ft_isprint(int c)
 {
-    if (c >= 32 && c <= 126)
-        return (1);
-    return (0);
+	return (c >= 32 && c <= 126);
 }
